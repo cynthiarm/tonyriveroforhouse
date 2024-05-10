@@ -192,7 +192,8 @@
 }
 
 .about-image img{
-    height: 107% !important;
+    height: 115% !important;
+    margin-top: -40px !important;
     
 }
 
@@ -288,7 +289,7 @@
 
 .service h6 {
     color: #ed1c24 !important;
-    font-size: 35px;
+
 }
 
 /*** Booking ***/
