@@ -203,6 +203,14 @@
    margin-top: 120px;
 }
 
+/*** pay pal ***/
+.paypal {
+    width: 98px;
+    height: 24px;
+    vertical-align: middle;
+    display: inline-block;
+    max-width: 100%;
+}
 
 /*** Header ***/
 .carousel-caption {
@@ -227,12 +235,12 @@
 
 .carousel-caption h6 {
   font-size: 72px;
-  color: #021e5f;
+  color: #fd000a;
 }
 
 .carousel-caption h5 {
-    font-size: 64px;
-    color: #ed1c24 !important;
+    font-size: 72px;
+    color: #0005ad !important;
 }
 
 @media (max-width: 768px) {
