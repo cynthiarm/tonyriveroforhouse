@@ -178,6 +178,25 @@
     }
 }
 
+
+@media (min-width: 576px) {
+    .carousel-caption h6 {
+        font-size: 42px !important;
+        color: #fd000a;
+        margin-top: 60px !important;
+    }
+
+    .carousel-caption h5 {
+        font-size: 52px;
+        color: #0005ad !important;
+        margin-top: -40px !important;
+    }
+    .btn.btn-primary, .btn.btn-secondary {
+        color: #FFFFFF;
+        padding-top: 20px;
+    }
+}
+
 .page-header {
     background-position: center center;
     background-repeat: no-repeat;

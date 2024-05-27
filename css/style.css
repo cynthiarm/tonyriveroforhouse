@@ -94,7 +94,7 @@
 }
 
 
-.menu-bar p{
+.menu-bar h4 {
     font-size: .875em;
     color: white;
     margin-right: 20px !important;
@@ -122,7 +122,7 @@
     margin-top: -75px;
 }
 
-.navbar .logo-img img {
+.navbar .logo img {
     width: 200px;
     height: auto;
 }
@@ -138,7 +138,7 @@
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-    color: #ed1c24;
+    color: #ed1c24!important;
 }
 
 @media (max-width: 991.98px) {
@@ -152,14 +152,29 @@
     }
 }
 
+ @media (min-width: 2500px) {
+
+    .animated-image {
+        position: relative;
+        margin-top: -240px!important;
+    }
+    .carousel-caption h6 {
+        font-size: 72px;
+        color: #fd000a;
+        margin-top: -510px!important;
+    }
+}
+
 .navbar-light .navbar-brand,
 .navbar-light a.btn {
     height: 75px;
+    margin-bottom: 5px;
 }
 
 .navbar-light .navbar-nav .nav-link {
     color: var(--dark);
     font-weight: 500;
+    font-size: medium;
 }
 
 .navbar-light.sticky-top {
@@ -196,6 +211,14 @@
     margin-top: -40px !important;
     
 }
+
+
+.Contact .validation {
+    color: #212529;
+    font-size: 13px;
+    margin-bottom: 10px;
+  
+  }
 
 /*** animated image ***/
 .animated-image {
@@ -271,7 +294,68 @@
     color: var(--light);
 }
 
+@media (max-width: 576px) {
+    .navbar .logo-img {
+        text-align: left;
+    }
+    
+    
+    .navbar .logo {
+        margin-bottom: -40px;
+        margin-inline: auto;
+    }
+    
+    .navbar .logo-img img {
+        width: 200px;
+        height: auto;
+    }
 
+    .carousel-caption h6 {
+        font-size: 52px!important;
+        color: #fd000a;
+        margin-top: 0px !important;
+    }
+
+    .carousel-caption h5 {
+        font-size: 52px;
+        color: #0005ad !important;
+        margin-top: -40px !important;
+    }
+
+    .btn.btn-primary, .btn.btn-secondary {
+        color: #FFFFFF;
+        margin-top: -10px;
+    }
+
+    .footer .copyright h4 {
+        font-size: 16px !important;
+        color: white;
+        margin-right: 12px !important;
+    }
+
+    .footer .btn.btn-social {
+        margin-right: 5px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000000;
+        border: 1px solid #FFFFFF;
+        border-radius: 35px;
+        transition: .3s;
+        background-color: #FFFFFF;
+        margin-top: -10px;
+        margin-right: 60px !important;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .animated-image {
+        position: relative;
+        margin-top: 180px;
+    }
+}
 /*** Facts ***/
 .fact {
     background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/carousel-bg-1.jpg);
@@ -288,16 +372,25 @@
 }
 
 .service .nav .nav-link.active {
-    background: var(--primary);
+    background: #ed1c24;
 }
 
 .service .nav .nav-link.active h4 {
-    color: #FFFFFF !important;
+    color: #fff !important;
 }
 
 .service h6 {
     color: #ed1c24 !important;
+    font-size: 20px;
 
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #830712!important;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #fff!important;
 }
 
 /*** Booking ***/
@@ -420,6 +513,15 @@
     border-radius: 35px;
     transition: .3s;
     background-color: #FFFFFF;
+    margin-top: -10px;
+}
+
+.footer .copyright h4 {
+    font-size: 16px !important;
+    color: white;
+    margin-right: 32px !important;
+
+
 }
 
 /*.footer .btn.btn-social:hover {
@@ -471,4 +573,14 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+.footer .footer-logo img {
+    width: 200px;
+    height: auto;
+}
+
+.issues-logo img {
+    width: 200px;
+    height: auto;
 }
