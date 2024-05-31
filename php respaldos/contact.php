@@ -7,20 +7,96 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 include("PHPMailer/PHPMailer.php");
 include("PHPMailer/SMTP.php");
 include("PHPMailer/Exception.php");
+//include("PHPMailer/class.phpmailer.php");
 
 try {
+   // $type = $_POST['type']; //1--> spanish, 2--> english
+    $name = $_POST['name'];
+    $emailTo = $_POST['email'];
+    $email = $_POST['email'];
+    $issue = $_POST['issue'];
+    //$subject = $_POST['subject'];
+    $bodyEmail = $_POST['message'];
+    
+    /*$fromemail = "noreply@tonyriveroforhouse.com";
+    $fromname = "Someone is trying to reach you by using your Tony Rivero For House website!";
+    $host = "tonyriveroforhouse.com";
+    $port = "567";
+    $SMTPAuth = "false";
+    $SMTPSecure = "tls";
+    $Username = "noreply@tonyriveroforhouse.com";
+    $Password = "Tonyrivero2024#";
+    $emailTo = 'crenteria@deviseis.com';*/
 
-    $type = $_POST['type']; //1--> spanish, 2--> english
+    $mail->isSMTP();
+    $mail->SMTPDebug = 1;
+    $mail-> "smtp.gmail.com";
+    $mail-> "587";
+    $mail-> "true";
+    $mail-> "tls";
+    $mail-> "noreplytonyriveroforhouse@gmail.com";
+    $mail-> "txwm xdfi gqhm vfbj";
+
+    
+    /*$mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );*/
+  
+    $mail = new PHPMailer\PHPMailer\PHPMailer();
+
+    $mail->isSMTP();
+    $mail->SMTPDebug = 0;
+    $mail->Host = $host;
+    $mail->Port = $port;
+    $mail->SMTPAuth = $SMTPAuth;
+    $mail->SMTPSecure = $SMTPSecure;
+    $mail->Username = $fromemail;
+    $mail->Password = $Password;
+
+    $mail->setFrom($fromemail,$fromname);
+    $mail->addAddress('crenteria@deviseis.com');
+    
+
+    //$mail->msgHTML(true);
+    $mail->isHTML(true);
+   // $mail->Subject = $subject;
+    $mail->Body = $bodyEmail;
+     //$mail->AltBody = strip_tags($bodyEmail);
+    //$mail->CharSet = 'UTF-8';
+    
+    if(!$mail->send()){
+            echo "We couldn't send your message! "; die();
+        }
+
+    echo "<div style='color: #000;margin-bottom: 15px;font-size: 15px;'>Your message has been sent.</div>";die();
+           
+    
+    var_dump('1');die();
+
+
+    /*$type = $_POST['type']; //1--> spanish, 2--> english
        $name = $_POST['name'];
-       $emailTo = $_POST['email'];
+       
        $email = $_POST['email'];
        $bodyEmail = $_POST['message'];
       //  $message = $_POST['message'];
        $issue = $_POST['issue'];
-      //  $mail = $_POST['mail_to'];
+       $mail = $_POST['mail_to'];
 
+        
+       /* $mail->SMTPAuth = true;
+        $mail->Port = 587; 
+        $mail->SMTPSecure = 'tls';
+        $mail->Host = 'smtp.gmail.com'; 
+        $mail->Username = 'noreplytonyriveroforhouse@gmail.com'; // SMTP username
+        $mail->Password = 'skcj jpbv desc jipf'; // SMTP password*/
+      
 
-      $hello = '';
+    /*  $hello = '';
       $emailLang = '';
       $nameLang = '';
       $issueLang = '';
@@ -38,7 +114,7 @@ try {
       $subject = 'Someone is trying to reach you by using your Tony Rivero For House website!';
       $fromname = "Someone is trying to reach you by using your Tony Rivero For House website!";
 
-      /*  if($type == '1' )
+        if($type == '1' )
         {
             $hello = 'Hello';
             $emailLang = 'Email:';
@@ -59,34 +135,29 @@ try {
 
         }*/
 
-        $headers  = "From: Tony Rivero For House Info <noreplytonyriveroforhouse@gmail.com>" . "\r\n";
+       /* $headers  = "From: Tony Rivero For House Info <noreplytonyriveroforhouse@gmail.com>" . "\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
         $headers .= "Mime-Version: 1.0" . "\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8". "\r\n";
 
 
-        $fromemail = "noreplytonyriveroforhouse@gmail.com";
-
-        $host = "smtp.gmail.com";
-        $port = "587";
-        $SMTPAuth = "login";
-        $SMTPSecure = "tls";
-        $Username = "noreplytonyriveroforhouse@gmail.com";
-        $Password = "txwm xdfi gqhm vfbj";
-        $emailTo = 'crenteria@deviseis.com'; 
-      /*   $mail->SMTPOptions = array(
+       
+       /*  $mail->SMTPOptions = array(
             'ssl' => array(
                 'verify_peer' => false,
                 'verify_peer_name' => false,
                 'allow_self_signed' => true
             )
-        );*/
+        )*/
 
-        $image = base64_encode(file_get_contents("img/logo/Rivero_logo - header.png"));
+
+
+
+       /*$image = base64_encode(file_get_contents("img/logo/Rivero_logo - header.png"));
         $logo = 'img/logo/Rivero_logo - header.png';
-        $link = 'https://tonyriveroforhouse.com/';
+        $link = 'https://tonyriveroforhouse.com/';*/
         
-        $bodyEmail .= '<html><body>';
+        /*$bodyEmail .= '<html><body>';
         $bodyEmail .= "<a href='{$link}'><img src='{$logo}' alt=''></a><br><br>";
         $bodyEmail .= "<h1>$hello</h1>";
         $bodyEmail .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
@@ -95,11 +166,11 @@ try {
         $bodyEmail .= "<tr style='background: #ed1c24;'><td align='right'><strong>$issueLang</strong> </td><td>". $issue . "</td></tr>";
         $bodyEmail .= "<tr><td align='right'><strong>$messageLang</strong> </td><td>" .  trim($_POST["message"]) . "</td></tr>";
         $bodyEmail .= "</table>";
-        $bodyEmail .= "</body></html>";
+        $bodyEmail .= "</body></html>";*/
 
-        $mail = new PHPMailer\PHPMailer\PHPMailer();
+        //$mail = new PHPMailer\PHPMailer\PHPMailer();
 
-        $mail->isSMTP();
+        /*$mail->isSMTP();
         $mail->SMTPDebug = 0;
         $mail->Host = $host;
         $mail->Port = $port;
@@ -137,7 +208,7 @@ try {
         else if($type == '1'){
             echo "<html>";
             echo "<div style='color: #000;margin-bottom: 15px;font-size: 15px;'>Your message has been sent.</div>";die();
-        }    
+        }    */
         
 
     } catch (Exception $e) {
