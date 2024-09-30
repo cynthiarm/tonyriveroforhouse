@@ -119,7 +119,7 @@
 }
 
 .navbar-light.sticky-top {
-    top: -100px;
+  
     transition: .5s;
 }
 
@@ -235,6 +235,15 @@
     color: #FFFFFF !important;
 }
 
+.video_bg_img {
+
+    background-color: #ed1c24 !important;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size:cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 /*** Booking ***/
 .booking {
@@ -242,6 +251,10 @@
     background-size: cover;
 }
 
+.video {
+    background-color: #ed1c24 !important;
+    background-size: cover;
+}
 .bootstrap-datetimepicker-widget.bottom {
     top: auto !important;
 }
