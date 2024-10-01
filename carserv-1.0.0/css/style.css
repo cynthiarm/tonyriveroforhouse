@@ -176,6 +176,23 @@
         height: 100%;
         object-fit: cover;
     }
+
+
+   /* .video_bg_img {
+
+        background-color: #ed1c24 !important;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size:cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .responsive_video{
+        width: 260px;
+        height:350px;
+        margin-top: 70px;
+    }*/
 }
 
 
@@ -195,6 +212,22 @@
         color: #FFFFFF;
         padding-top: 20px;
     }
+
+    /*.video_bg_img {
+
+        background-color: #ed1c24 !important;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size:cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .responsive_video{
+        width: 260px;
+        height:350px;
+        margin-top: 70px;
+    }*/
 }
 
 .page-header {
@@ -235,14 +268,18 @@
     color: #FFFFFF !important;
 }
 
-.video_bg_img {
-
+/*.video_bg_img {
     background-color: #ed1c24 !important;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size:cover;
     -o-background-size: cover;
     background-size: cover;
+}*/
+
+.responsive_video > iframe {  
+    width: 760px!important; 
+    height: 715px!important; 
 }
 
 /*** Booking ***/
@@ -251,10 +288,11 @@
     background-size: cover;
 }
 
-.video {
+/*.video {
     background-color: #ed1c24 !important;
     background-size: cover;
-}
+}*/
+
 .bootstrap-datetimepicker-widget.bottom {
     top: auto !important;
 }
